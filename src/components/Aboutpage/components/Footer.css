@@ -1,0 +1,48 @@
+#footer { background: var(--bg); overflow: hidden; }
+.footer-brand { padding: 0 56px; border-bottom: 1px solid rgba(0,0,0,.08); overflow: hidden; }
+.footer-brand span {
+  display: block;
+  font-size: clamp(72px, 16vw, 210px);
+  font-weight: 900; letter-spacing: -.06em; line-height: .85; color: var(--ink);
+}
+.footer-bottom {
+  display: grid; grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 52px; padding-top: 52px; padding-bottom: 52px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.footer-col-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink4); margin-bottom: 14px; font-weight: 600; }
+.footer-nav, .footer-col { display: flex; flex-direction: column; gap: 9px; }
+.footer-nav a, .footer-col > a {
+  font-size: 14px; font-weight: 300; color: var(--ink3);
+  transition: color .25s, transform .25s; display: inline-block;
+}
+.footer-nav a:hover, .footer-col > a:hover { color: var(--ink); transform: translateX(4px); }
+.footer-social { display: flex; flex-direction: column; }
+.footer-social li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.footer-social li:first-child { border-top: 1px solid rgba(0,0,0,.08); }
+.footer-social li > span { font-size: 10px; color: var(--ink4); letter-spacing: .05em; flex-shrink: 0; }
+.footer-social a { font-size: 14px; font-weight: 400; flex: 1; transition: color .25s; }
+.footer-social a:hover { color: var(--ink); }
+.footer-social svg { width: 13px; height: 13px; flex-shrink: 0; opacity: .35; transition: opacity .3s; }
+.footer-social li:hover svg { opacity: 1; }
+.footer-copy {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 18px; padding-bottom: 18px;
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink4);
+}
+.footer-back-top { font-weight: 600; color: var(--ink3); transition: color .3s; }
+.footer-back-top:hover { color: var(--ink); }
+
+@media (max-width: 1100px) {
+  .footer-bottom { grid-template-columns: 1fr 1fr; }
+  .footer-col:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 768px) {
+  .footer-brand { padding: 0 24px; }
+  .footer-bottom { grid-template-columns: 1fr; padding: 40px 24px; }
+  .footer-col:last-child { grid-column: auto; }
+  .footer-copy { padding: 16px 24px; flex-wrap: wrap; gap: 8px; }
+}

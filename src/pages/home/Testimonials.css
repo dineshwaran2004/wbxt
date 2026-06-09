@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ── DEFAULT BASE LIGHT RULES ── */
+.classic-tech-section {
+  --bg-main: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-card: #f1f5f9;
+  --border-hover: #e2e8f0;
+  --bg-tab-active: #eff6ff;
+  --bg-icon-base: #f8fafc;
+  --blue-primary: #0056f3;
+  --card-shadow: rgba(15, 23, 42, 0.04);
+}
+
+/* ── APPLIES STYLES ONLY IF THE WRAPPER HAS THE DARK THEME CLASS ── */
+.classic-tech-section.dark-theme {
+  --bg-main: #0b0f19;          /* Luxury Dark Slate background */
+  --text-main: #f8fafc;          /* High Contrast Bright Text */
+  --text-muted: #94a3b8;        /* Soft Gray Description Labels */
+  --border-card: #1e293b;       /* Dark Structural Boundaries */
+  --border-hover: #334155;      /* Slate Hover Boundaries */
+  --bg-tab-active: #1e293b;     /* Selected Navigation Tab background */
+  --bg-icon-base: #131b2e;      /* Inner Circular Icon Container Wells */
+  --blue-primary: #3b82f6;      /* Vibrant Electric Blue Accents */
+  --card-shadow: rgba(0, 0, 0, 0.45);
+}
+
+/* ── COMPONENT DESIGN LAYOUTS ── */
+.classic-tech-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background-color: var(--bg-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.classic-tech-container {
+  display: flex;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.classic-grid-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Navigation Controls */
+.classic-filter-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-card);
+  padding-bottom: 12px;
+  transition: border-color 0.25s ease;
+}
+
+.filter-tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.filter-tab-btn:hover {
+  color: var(--text-main);
+  background-color: var(--bg-icon-base);
+}
+
+.filter-tab-btn.is-active {
+  color: var(--blue-primary);
+  background-color: var(--bg-tab-active);
+}
+
+/* Base Cards Structure */
+.classic-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.classic-tool-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 24px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.classic-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  background-color: var(--bg-icon-base);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--border-card);
+  transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.classic-tool-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Inverts dark-on-dark icons cleanly under dark mode wrapper context */
+.classic-tech-section.dark-theme .theme-invert-target .classic-tool-img {
+  filter: brightness(0) invert(1);
+}
+
+.classic-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 2px;
+}
+
+.classic-tool-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.classic-tool-description {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Global Dynamic Hover Mechanics */
+.classic-tool-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 24px var(--card-shadow);
+}
+
+.classic-tool-card:hover .classic-icon-wrapper {
+  background-color: var(--glow-bg);
+  transform: scale(1.04);
+  border-color: transparent;
+}
+
+/* ── RIGHT TEXT CONTENT ── */
+.classic-branding-side {
+  width: 380px;
+  flex-shrink: 0;
+}
+
+.sticky-brand-content {
+  position: sticky;
+  top: 60px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.classic-main-title {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 0.95;
+  margin: 0 0 20px 0;
+  letter-spacing: -2px;
+}
+
+.classic-blue-highlight {
+  color: var(--blue-primary);
+}
+
+.classic-accent-line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--blue-primary);
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.classic-side-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 340px;
+  margin: 0;
+}
+
+/* Responsive Structural Modifiers */
+@media (max-width: 1100px) {
+  .classic-tech-container {
+    flex-direction: column-reverse;
+    gap: 48px;
+    padding: 0 24px;
+  }
+  .classic-branding-side {
+    width: 100%;
+  }
+  .sticky-brand-content {
+    text-align: center;
+    align-items: center;
+    position: static;
+  }
+  .classic-side-text {
+    max-width: 520px;
+  }
+}
+/* Add this to your stylesheet */
+.tool-icon {
+  width: 24px;   /* Or your preferred size */
+  height: 24px;
+  display: block;
+}

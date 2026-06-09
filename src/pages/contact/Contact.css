@@ -1,0 +1,508 @@
+/* ═══ HOME CONTACT SECTION ═══ */
+.contact-container {
+  background: var(--bg-secondary);
+  padding: 80px 6%;
+  border-top: 1px solid var(--border-color);
+  transition: background 0.3s ease;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.left h1 {
+  font-family: "Phudu", sans-serif;
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  transition: color 0.3s ease;
+}
+
+.contact-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-family: "Open Sans", sans-serif;
+  max-width: 380px;
+}
+
+.contact-cta-btn {
+  padding: 14px 28px;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+.contact-cta-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.right .description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  font-family: "Open Sans", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 12px 0;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-primary);
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.form input::placeholder,
+.form textarea::placeholder { color: var(--text-muted); }
+.form input:focus,
+.form textarea:focus { border-bottom-color: var(--accent); }
+
+.form textarea { min-height: 100px; }
+
+.form button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: fit-content;
+}
+.form button[type="submit"]:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container { padding: 60px 5%; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .input-row { grid-template-columns: 1fr; }
+  .form button[type="submit"] { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .left h1 { font-size: 36px; }
+}
+
+/* ═══════════════════════════════════════════════
+   CONTACT PAGE (ContactPage.jsx) — FULL STYLES
+═══════════════════════════════════════════════ */
+
+/* ── Wrapper ── */
+.contact-page-wrapper {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  transition: background 0.3s ease;
+  padding-top: 105px;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb-bar {
+  padding: 20px 6%;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: "Open Sans", sans-serif;
+  border-bottom: 1px solid var(--border-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.breadcrumb-bar span {
+  color: var(--accent);
+}
+
+/* ── Hero Section ── */
+.contact-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  padding: 80px 6% 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ── Animations ── */
+.fade-up {
+  animation: cpFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+.slide-in {
+  animation: cpSlideIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cpFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cpSlideIn {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Hero Title ── */
+.contact-hero-title h1 {
+  font-family: "Phudu", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+/* ── Hero Right ── */
+.contact-hero-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 44px;
+  font-family: "Open Sans", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.contact-hero-desc strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* ── Form Wrap ── */
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* ── Field ── */
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.field.full {
+  width: 100%;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 12px 0;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-primary);
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.field textarea {
+  min-height: 90px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-bottom-color: var(--accent);
+}
+
+/* ── Underline Span ── */
+.field .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transition: width 0.35s ease;
+  pointer-events: none;
+}
+
+.field input:focus ~ .underline,
+.field textarea:focus ~ .underline {
+  width: 100%;
+}
+
+/* ── Form Actions ── */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* ── Submit Button ── */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.submit-btn.sent {
+  background: #22c55e;
+  pointer-events: none;
+}
+
+/* ── Start Project Link ── */
+.start-project-link {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.start-project-link:hover {
+  color: var(--accent-hover);
+}
+
+/* ─────────────────────────────
+   EMAIL BANNER
+───────────────────────────── */
+.email-banner {
+  padding: 80px 6% 60px;
+  border-top: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.email-top {
+  margin-bottom: 48px;
+}
+
+.email-text {
+  display: block;
+  font-family: "Phudu", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.email-text:hover {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* ── Email Bottom ── */
+.email-bottom {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.connect-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-top: 6px;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+/* ── Social List ── */
+.social-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: border-color 0.3s ease;
+}
+
+.social-item:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.social-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.social-name {
+  flex: 1;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: "Phudu", sans-serif;
+  letter-spacing: -0.5px;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.social-name.hovered {
+  color: var(--accent);
+  transform: translateX(12px);
+}
+
+.social-arrow {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  transition: color 0.4s ease, transform 0.4s ease;
+  flex-shrink: 0;
+}
+
+.social-arrow.hovered {
+  color: var(--accent);
+  transform: translateY(-4px) translateX(4px);
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+@media (max-width: 1024px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 60px 6% 80px;
+  }
+
+  .contact-hero-title h1 {
+    font-size: clamp(3rem, 12vw, 5rem);
+    letter-spacing: -2px;
+  }
+
+  .email-bottom {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page-wrapper { padding-top: 75px; }
+
+  .contact-hero {
+    padding: 40px 5% 60px;
+    gap: 36px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .submit-btn { width: 100%; justify-content: center; }
+
+  .email-banner { padding: 60px 5% 50px; }
+
+  .email-text { font-size: clamp(2rem, 10vw, 3.5rem); letter-spacing: -1px; }
+
+  .social-name { font-size: 1.6rem; }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-title h1 { font-size: 2.6rem; letter-spacing: -1px; }
+  .email-text { font-size: 1.8rem; }
+}

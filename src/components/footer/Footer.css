@@ -1,0 +1,219 @@
+.footer {
+  width: 100%;
+  background: var(--footer-bg);
+  padding: 70px 6% 40px;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid var(--footer-border);
+  transition: background 0.3s ease;
+}
+.footer {
+  width: 100%;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 70px 6% 40px;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid var(--footer-border);
+  transition: all 0.3s ease;
+}
+/* TOP */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-top a {
+  text-decoration: none;
+  color: var(--footer-text);
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.footer-top a:hover { color: var(--accent); }
+
+/* CTA STRIP */
+.footer-cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 50px 0;
+  border-top: 1px solid var(--footer-border);
+  border-bottom: 1px solid var(--footer-border);
+  margin-bottom: 60px;
+}
+
+.footer-cta-strip h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--footer-text);
+  font-family: "Phudu", sans-serif;
+  line-height: 1.1;
+  transition: color 0.3s ease;
+}
+
+.footer-cta-strip h2 span { color: var(--accent); }
+
+.footer-cta-btn {
+  padding: 18px 38px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1D2D89, #368CDD);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(54,140,221,0.35);
+}
+
+.footer-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(54,140,221,0.5);
+}
+
+/* INFO */
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-left p,
+.footer-right p {
+  color: var(--footer-sub);
+  font-size: 15px;
+  line-height: 2.1;
+  transition: color 0.3s ease;
+}
+
+.footer-left p a {
+  color: var(--footer-sub);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-left p a:hover { color: var(--accent); }
+
+/* HUGE LOGO */
+.footer-logo {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.footer-logo h1 {
+  font-size: clamp(100px, 22vw, 420px);
+  line-height: 0.9;
+  font-weight: 800;
+  color: var(--footer-logo);
+  white-space: nowrap;
+  font-family: "Phudu", sans-serif;
+  animation: moveText 14s linear infinite;
+  transition: color 0.3s ease;
+}
+
+@keyframes moveText {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-120px); }
+  100% { transform: translateX(0); }
+}
+
+/* BOTTOM */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  text-decoration: none;
+  color: var(--footer-sub);
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover { color: var(--accent); }
+
+.back-top {
+  border: 1px solid var(--footer-border);
+  background: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: var(--footer-text);
+  padding: 12px 22px;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.back-top:hover {
+  transform: translateY(-4px);
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .footer-top   { justify-content: center; }
+  .footer-info  { flex-direction: column; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-cta-strip { flex-direction: column; text-align: center; align-items: center; }
+}
+
+@media(max-width: 768px) {
+  .footer-logo h1 { font-size: 90px; }
+  .footer-top a   { font-size: 14px; }
+}
+
+/* ═══ RESPONSIVE FIXES ═══ */
+@media (max-width: 768px) {
+  .footer { padding: 50px 5% 30px; }
+  .footer-top {
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+  .footer-cta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .footer-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-logo h1 {
+    font-size: clamp(40px, 12vw, 80px);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .footer-socials { flex-wrap: wrap; gap: 12px; }
+}

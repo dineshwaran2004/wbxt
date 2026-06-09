@@ -1,0 +1,270 @@
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ==========================
+   BACKGROUND SLIDES
+========================== */
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.8s ease;
+}
+
+.hero__slide--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.55)
+  );
+}
+
+.hero__slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+.hero__content {
+  position: absolute;
+  z-index: 10;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 90%;
+  max-width: 1200px;
+
+  text-align: center;
+  color: white;
+}
+
+/* ==========================
+   LABEL
+========================== */
+
+.hero__label {
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #368CDD;
+
+  margin-bottom: 20px;
+
+  transition: all 0.4s ease;
+}
+
+.hero__label--hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* ==========================
+   TITLE
+========================== */
+
+.hero__title {
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.9;
+  font-weight: 800;
+
+  margin-bottom: 25px;
+
+  transition: all 0.4s ease;
+}
+
+.hero__title--hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ==========================
+   SUBTITLE
+========================== */
+
+.hero__sub {
+  max-width: 700px;
+  margin: auto;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.9);
+
+  transition: all 0.4s ease;
+}
+
+.hero__sub--hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ==========================
+   INDICATORS
+========================== */
+
+.hero__indicators {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 12px;
+
+  z-index: 20;
+}
+
+.hero__dot {
+  width: 12px;
+  height: 12px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.4);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.hero__dot:hover {
+  transform: scale(1.2);
+}
+
+.hero__dot--active {
+  background: #368CDD;
+  transform: scale(1.3);
+}
+
+/* ==========================
+   PROGRESS BAR
+========================== */
+
+.hero__progress-track {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: rgba(255,255,255,0.15);
+
+  z-index: 20;
+}
+
+.hero__progress-bar {
+  height: 100%;
+  background: #368CDD;
+
+  transition: width 0.6s ease;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 992px) {
+
+  .hero__title {
+    font-size: 5rem;
+  }
+
+  .hero__sub {
+    font-size: 16px;
+    max-width: 600px;
+  }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: 100svh;
+  }
+
+  .hero__content {
+    width: 92%;
+  }
+
+  .hero__label {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .hero__sub {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero__indicators {
+    bottom: 50px;
+  }
+
+  .hero__dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width: 480px) {
+
+  .hero__title {
+    font-size: 2.3rem;
+  }
+
+  .hero__sub {
+    font-size: 14px;
+  }
+
+  .hero__indicators {
+    gap: 8px;
+  }
+
+  .hero__dot {
+    width: 8px;
+    height: 8px;
+  }
+}

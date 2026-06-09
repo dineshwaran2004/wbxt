@@ -1,0 +1,50 @@
+.section-title { font-size: clamp(38px, 5vw, 72px); font-weight: 700; letter-spacing: -.04em; line-height: 1; }
+.bracket-link { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink2); }
+.bracket-link:hover { text-decoration: underline; }
+
+.awards-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
+.awards-list { border-top: 1px solid rgba(0,0,0,.1); }
+.award-row {
+  display: grid; grid-template-columns: 1fr auto auto auto;
+  align-items: center; gap: 28px;
+  padding: 22px 0; border-bottom: 1px solid rgba(0,0,0,.1);
+  position: relative; overflow: hidden;
+}
+.award-row::before {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--ink);
+  transition: width .5s var(--ease-out);
+}
+.award-row:hover::before { width: 100%; }
+.award-name { font-size: 20px; font-weight: 400; transition: transform .3s; }
+.award-row:hover .award-name { transform: translateX(8px); }
+.award-tags { display: flex; gap: 6px; }
+.award-tags em {
+  font-style: normal; font-size: 9px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink3); background: rgba(0,0,0,.06); padding: 3px 7px; border-radius: 2px;
+}
+.award-year { font-size: 13px; color: var(--ink4); }
+.award-btn {
+  font-size: 10px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; padding: 8px 16px;
+  border: 1px solid rgba(0,0,0,.2); color: var(--ink3);
+  transition: background .3s, color .3s, border-color .3s;
+}
+.award-row:hover .award-btn { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+.award-hover-img {
+  position: fixed; width: 370px; height: 230px;
+  pointer-events: none; z-index: 300;
+  opacity: 0; transform: translate(-50%, -50%) scale(.85);
+  transition: opacity .4s, transform .4s ease;
+  overflow: hidden; border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+}
+.award-hover-img.visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.award-hover-img img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 768px) {
+  .award-row { grid-template-columns: 1fr auto; }
+  .award-tags, .award-year { display: none; }
+}

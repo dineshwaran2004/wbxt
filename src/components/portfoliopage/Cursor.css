@@ -1,0 +1,98 @@
+/* ==========================
+   CUSTOM CURSOR
+========================== */
+
+.cursor__dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #368CDD;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  transition: transform 0.1s ease;
+}
+
+.cursor__ring {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #368CDD;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99998;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  font-weight: 600;
+  color: #1D2D89;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
+}
+
+.cursor__ring--hovered {
+  width: 80px;
+  height: 80px;
+  background: rgba(54, 140, 221, 0.12);
+  border-color: #1D2D89;
+  color: #1D2D89;
+  font-size: 11px;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 1024px) {
+  .cursor__dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .cursor__ring {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+  .cursor__dot,
+  .cursor__ring {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}
+
+/* ==========================
+   TOUCH DEVICES
+========================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor__dot,
+  .cursor__ring {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}

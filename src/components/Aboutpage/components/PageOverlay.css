@@ -1,0 +1,8 @@
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0A0A0A;
+  z-index: 10000;
+  transform-origin: top;
+  pointer-events: none;
+}

@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Open+Sans:wght@300..800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ══════════════════════════════════════════
+   LIGHT THEME
+══════════════════════════════════════════ */
+:root,
+[data-theme="light"] {
+  --bg-primary:    #f5f5f5;
+  --bg-secondary:  #fffcfc;
+  --bg-card:       #ffffff;
+  --bg-dark-card:  #18181b;
+  --bg-footer:     #efefef;
+  --bg-mission:    #fffcfc;
+  --bg-journey:    #f0ede8;
+  --bg-services-wrapper: #f3f3f3;
+  --bg-navbar:     rgba(255,255,255,0.92);
+  --bg-hero:       #f5f5f5;
+  --bg-hero-circle:#e3f0fc;
+
+  --text-primary:  #111111;
+  --text-secondary:#333333;
+  --text-muted:    #666666;
+  --text-faint:    rgba(0,0,0,0.55);
+  --text-footer:   #111111;
+  --text-footer-sub:#666666;
+
+  --border-color:  rgba(0,0,0,0.07);
+  --border-light:  #d4d1ca;
+  --card-border:   rgba(228,228,231,0.6);
+
+  --accent:        #368CDD;
+  --accent-hover:  #1D2D89;
+  --accent-soft:   #e3f0fc;
+  --accent-glow:   rgba(54,140,221,0.25);
+
+  --btn-secondary-bg:#ffffff;
+  --btn-secondary-color:#368CDD;
+  --btn-secondary-hover:#e3f0fc;
+
+  --floating-icon-bg:#ffffff;
+  --shadow-sm:     0 10px 30px rgba(0,0,0,0.08);
+  --shadow-md:     0 25px 60px rgba(0,0,0,0.12);
+
+  --mission-box-bg: rgba(0,0,0,0.03);
+  --mission-title:  #111;
+  --mission-text:   rgba(0,0,0,0.68);
+  --device-bg:      rgba(0,0,0,0.03);
+  --device-title:   #111111;
+  --device-text:    rgba(0,0,0,0.65);
+
+  --about-title:   #000000;
+  --about-text:    rgba(0,0,0,0.72);
+
+  --journey-bg:     #f0ede8;
+  --journey-title:  #1a1a1a;
+  --journey-label:  #999999;
+
+  --services-heading: #09090b;
+  --services-card-bg-light: #ffffff;
+  --services-label: #a1a1aa;
+  --stats-value:    #09090b;
+  --cta-bg:         #ffffff;
+  --cta-title:      #09090b;
+  --cta-desc:       #71717a;
+  --cta-btn-bg:     #09090b;
+
+  --founder-text:   rgba(0,0,0,0.7);
+
+  --footer-bg:      #efefef;
+  --footer-text:    #111111;
+  --footer-sub:     #666666;
+  --footer-logo:    #0b0b0b;
+  --footer-border:  rgba(0,0,0,0.1);
+
+  --toggle-bg:      #e4e4e4;
+  --toggle-icon:    #368CDD;
+
+  --section-tag-color: #368CDD;
+}
+
+/* ══════════════════════════════════════════
+   DARK THEME
+══════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg-primary:    #0a0a0a;
+  --bg-secondary:  #0f0f0f;
+  --bg-card:       #161616;
+  --bg-dark-card:  #1c1c1c;
+  --bg-footer:     #0d0d0d;
+  --bg-mission:    #0f0f0f;
+  --bg-journey:    #111111;
+  --bg-services-wrapper: #111111;
+  --bg-navbar:     rgba(10,10,10,0.92);
+  --bg-hero:       #0a0a0a;
+  --bg-hero-circle:rgba(54,140,221,0.14);
+
+  --text-primary:  #f0f0f0;
+  --text-secondary:#cccccc;
+  --text-muted:    #888888;
+  --text-faint:    rgba(255,255,255,0.45);
+  --text-footer:   #f0f0f0;
+  --text-footer-sub:#777777;
+
+  --border-color:  rgba(255,255,255,0.07);
+  --border-light:  rgba(255,255,255,0.1);
+  --card-border:   rgba(255,255,255,0.07);
+
+  --accent:        #368CDD;
+  --accent-hover:  #1D2D89;
+  --accent-soft:   rgba(54,140,221,0.2);
+  --accent-glow:   rgba(54,140,221,0.4);
+
+  --btn-secondary-bg:transparent;
+  --btn-secondary-color:#368CDD;
+  --btn-secondary-hover:rgba(54,140,221,0.14);
+
+  --floating-icon-bg:#1e1e1e;
+  --shadow-sm:     0 10px 30px rgba(0,0,0,0.5);
+  --shadow-md:     0 25px 60px rgba(0,0,0,0.6);
+
+  --mission-box-bg: rgba(255,255,255,0.04);
+  --mission-title:  #f0f0f0;
+  --mission-text:   rgba(255,255,255,0.65);
+  --device-bg:      rgba(255,255,255,0.04);
+  --device-title:   #f0f0f0;
+  --device-text:    rgba(255,255,255,0.6);
+
+  --about-title:   #f0f0f0;
+  --about-text:    rgba(255,255,255,0.65);
+
+  --journey-bg:     #111111;
+  --journey-title:  #f0f0f0;
+  --journey-label:  #666666;
+
+  --services-heading: #f0f0f0;
+  --services-card-bg-light: #1a1a1a;
+  --services-label: #666666;
+  --stats-value:    #f0f0f0;
+  --cta-bg:         #1a1a1a;
+  --cta-title:      #f0f0f0;
+  --cta-desc:       #888888;
+  --cta-btn-bg:     #f0f0f0;
+
+  --founder-text:   rgba(255,255,255,0.65);
+
+  --footer-bg:      #0d0d0d;
+  --footer-text:    #f0f0f0;
+  --footer-sub:     #666666;
+  --footer-logo:    #f0f0f0;
+  --footer-border:  rgba(255,255,255,0.08);
+
+  --toggle-bg:      #2a2a2a;
+  --toggle-icon:    #368CDD;
+
+  --section-tag-color: #368CDD;
+}
+
+/* ══════════════════════════════════════════
+   BASE
+══════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ══════════════════════════════════════════
+   THEME TOGGLE
+══════════════════════════════════════════ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--toggle-bg);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: var(--toggle-icon);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: var(--accent-soft);
+}
+
+.theme-toggle svg { transition: transform 0.4s ease; }
+.theme-toggle:hover svg { transform: rotate(25deg); }
+
+/* ══════════════════════════════════════════
+   SCROLL STACK
+══════════════════════════════════════════ */
+.scroll-stack-card {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* ══════════════════════════════════════════
+   GLOBAL RESPONSIVE FIXES
+══════════════════════════════════════════ */
+
+/* Prevent horizontal overflow */
+html, body { overflow-x: hidden; }
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* ── SERVICES GRID RESPONSIVENESS ── */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .card-wide { grid-column: span 1 !important; }
+  .card-heading { grid-column: span 2 !important; }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .card-heading, .card-wide { grid-column: span 1 !important; }
+  .card-image { display: none !important; }
+  .card-stats { display: flex !important; }
+  .services-wrapper { padding: 60px 5% !important; }
+}
+
+/* ── PORTFOLIO PAGE ── */
+@media (max-width: 768px) {
+  .pf-hero { flex-direction: column !important; padding: 100px 5% 50px !important; }
+  .pf-expertise { padding: 50px 5% !important; }
+  .pf-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── JOURNEY PAGE ── */
+@media (max-width: 768px) {
+  .journey { padding: 80px 5% 50px !important; }
+  .journey-header { flex-direction: column !important; gap: 20px !important; }
+}
+
+/* ── STATS ── */
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ── TESTIMONIALS ── */
+@media (max-width: 768px) {
+  .testimonials { padding: 60px 5% !important; }
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── CLIENTS ── */
+@media (max-width: 768px) {
+  .clients { padding: 40px 5% !important; flex-wrap: wrap !important; gap: 20px !important; }
+}
+
+/* ── CURSOR hide on touch ── */
+@media (pointer: coarse) {
+  * { cursor: auto !important; }
+  #custom-cursor-dot, #custom-cursor-circle { display: none !important; }
+}
+[data-theme="dark"] .hero {
+  background: #0a0a0a !important;
+}
+
+[data-theme="dark"] .hero-left h1 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .hero-left p {
+  color: #bfbfbf !important;
+}
+[data-theme="dark"] .footer {
+  background: #0d0d0d;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+[data-theme="dark"] .footer-top a,
+[data-theme="dark"] .footer-cta-strip h2,
+[data-theme="dark"] .back-top {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .footer-left p,
+[data-theme="dark"] .footer-right p,
+[data-theme="dark"] .footer-socials a {
+  color: #888888;
+}
+
+[data-theme="dark"] .footer-logo h1 {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .back-top {
+  border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .back-top:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+[data-theme="dark"] .footer-cta-strip {
+  border-top-color: rgba(255,255,255,0.08);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+/* =========================
+   GLOBAL CONTAINER FIX
+========================= */
+
+.container{
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+  padding-inline:40px;
+}
+
+section{
+  overflow:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* Large Desktop */
+@media (min-width:1600px){
+  .container{
+    max-width:1500px;
+  }
+}
+
+/* Tablet */
+@media (max-width:1024px){
+  .container{
+    padding-inline:30px;
+  }
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .container{
+    padding-inline:20px;
+  }
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  overflow-x:hidden;
+}
+
+@media (max-width:768px){
+
+  .container{
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+
+}

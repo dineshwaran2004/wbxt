@@ -1,0 +1,10 @@
+@import "./styles/global.css";
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-primary);
+}
